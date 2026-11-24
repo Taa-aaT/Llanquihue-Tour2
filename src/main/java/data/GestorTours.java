@@ -6,8 +6,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.nio.charset.StandardCharsets;
 
-public class GestorDatos {
+public class GestorTours {
 
     public ArrayList<Tour> cargarTours(Path rutaLista) throws IOException {
 
@@ -41,7 +42,21 @@ public class GestorDatos {
                     System.err.println("Omitiendo linea: " + numeroLinea + ". " + e.getMessage());
                 }
             }
-            return listaTours;
-        }
+        } return listaTours;
+    }
+
+    public void guardarTour(Path rutaLista, Tour tour) throws IOException {
+        ArrayList<String> lineas = new ArrayList<>();
+
+        if (Files.exists(rutaLista)) {
+            lineas.addAll(Files.readAllLines(rutaLista, StandardCharsets.UTF_8));}
+
+        String nuevaLinea = tour.getNombre() + ";"
+                + tour.getCiudad() + ";"
+                + tour.getTipo() + ";"
+                + tour.getPrecio();
+
+        lineas.add(nuevaLinea);
+        Files.write(rutaLista, lineas, StandardCharsets.UTF_8);
     }
 }

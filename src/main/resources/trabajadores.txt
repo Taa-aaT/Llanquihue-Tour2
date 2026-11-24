@@ -1,0 +1,15 @@
+Fernando Fernandez;Guia turistico;15765768-7
+Valentina Valeria;Gestión de Turismo;18364521-8
+Sebastián Soto;Coordinación de Excursiones;20987456-9
+Camila Cardenaz;Gestión de Viajes;19741852-9
+Nicolás Navarro;Servicios de Guía Turística;18987452-7
+Fernanda Fernandez;Gestión de Reservas;14354758-4
+Matías Aguilera;Atención al Cliente;19418357-8
+Daniela Donozo;Gestión de Transporte Turístico;18157359-2
+Tomás Aguilera;Marketing Turístico;16421896-3
+Catalina Espinoza;Planificación Turística;20987321-1
+Benjamín Soto;Gestión de Alojamientos Turísticos;15963485-2
+Isidora Muñoz;Asesoría Turística;18978423-6
+Vicente Araya;Operaciones Turísticas;15950047-4
+Antonia Reyes;Organización de Eventos Turísticos;15879246-6
+Florencia Navarro;Sustentabilidad Turística;19789456-2

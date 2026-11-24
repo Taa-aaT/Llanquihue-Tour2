@@ -1,52 +1,44 @@
 package ui;
 
-import data.GestorDatos;
+import data.GestorTours;
+import data.GestorTrabajadores;
 import model.Tour;
+import model.Trabajadores;
+
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
-
-    public static void main (String[] args){
+    public static void main(String[] args) {
 
         Path rutaArchivo = Path.of("src/main/resources/tours.txt");
-        GestorDatos gestor = new GestorDatos();
+        Path rutaTrabajadores = Path.of("src/main/resources/trabajadores.txt");
 
-        try{
-            ArrayList<Tour> tours = gestor.cargarTours(rutaArchivo);
-            //Recorrido
-            System.out.println("******LISTA DE TOURS DISPONIBLES******\n");
-            for (Tour tour : tours) {
-                System.out.println(tour);
-            }
+        GestorTours gestorTours = new GestorTours();
+        GestorTrabajadores gestorTrabajadores = new GestorTrabajadores();
 
-            //Filtro 1
-            System.out.println("\nTOURS DE ¨NATURALEZA¨:");
-            for (Tour tour : tours) {
-                if (tour.getTipo().equalsIgnoreCase("Naturaleza")) {
-                    System.out.println(tour);
-                }
-            }
+        try {
+            ArrayList<Tour> tours = gestorTours.cargarTours(rutaArchivo);
+            ArrayList<Trabajadores> trabajadores =
+                    gestorTrabajadores.cargarTrabajadores(rutaTrabajadores);
 
-            //Filtro 2
+            Scanner teclado = new Scanner(System.in);
 
-            System.out.println("\nTOURS POR MENOS DE $35.000 PESOS");
-            boolean tourMenos35000 = false;
-            for (Tour tour : tours){
-                if (tour.getPrecio() < 35000){
-                    System.out.println(tour);
-                    tourMenos35000 = true;
-                }
-            }
-            if (!tourMenos35000){
-                System.out.println("No tenemos tours disponibles en este momento");
-            }
+            Menu menu = new Menu(
+                    tours,
+                    trabajadores,
+                    teclado,
+                    gestorTours,
+                    rutaArchivo,
+                    gestorTrabajadores,
+                    rutaTrabajadores
+            );
+            menu.mostrarMenuPrincipal();
 
         } catch (IOException e) {
-            System.err.println("No se pudo leer el archivo: " + e.getMessage());
+            System.out.println("No se pudo leer un archivo: " + e.getMessage());
         }
-
     }
-
 }

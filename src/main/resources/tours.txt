@@ -4,3 +4,4 @@ Navegacion por Lago Llanquihue;Llanquihue;Lacustre;28000
 Saltos del Petrohué;Ensenada;Naturaleza;55000
 Ruta Gastronomica Puerto Montt;Puerto Montt;Gastronomico;65000
 Parque Nacional Vicente Perez;Ensenada;Naturaleza;45000
+Tour del vino;Llanquihue;Gastronomico;30000
